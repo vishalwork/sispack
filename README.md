@@ -1,16 +1,78 @@
-#### README #####
+# Sispack 🗂️
+> Built to help users easily track and analyze installed package sizes on their system.
 
-Sispack is a simple shell scripted program, that gives the output of used space in your Linux system.
+![Shell](https://img.shields.io/badge/Shell-Bash-green) ![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS-blue) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-For now, this is only for debian or debian-forked.
+---
 
-After downloading the script file,
-  Make it executable: chmod +x sispack
+## Supported Platforms
 
-take it to local bin directory. ie. ~/.local/bin
+| Platform | Package Manager |
+|----------|----------------|
+| Debian / Ubuntu | `dpkg` |
+| Fedora / RHEL / CentOS | `rpm` |
+| Arch Linux | `pacman` |
+| macOS | `Homebrew` + `/Applications` |
 
-Now it's done! access it from anywhere using terminal.
+---
 
----- OR ----
+## Installation
 
-Download (.deb) package for easy installation.
+### Debian / Ubuntu
+```bash
+git clone https://github.com/vishalwork/sispack.git
+cd sispack
+chmod +x sispack
+mv sispack ~/.local/bin/
+```
+> Or download `.deb` from releases:
+> ```bash
+> sudo dpkg -i sispack.deb
+> ```
+
+### macOS
+```bash
+git clone https://github.com/vishalwork/sispack.git
+cd sispack
+chmod +x sispack
+sudo mv sispack /usr/local/bin/
+```
+> **Note:** Homebrew must be installed for package tracking.
+> Install Homebrew: https://brew.sh
+
+### Arch Linux
+```bash
+git clone https://github.com/vishalwork/sispack.git
+cd sispack
+chmod +x sispack
+mv sispack ~/.local/bin/
+# ~/.local/bin PATH mein nahi hai toh:
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+```
+
+### RPM (Fedora / RHEL / CentOS)
+```bash
+git clone https://github.com/vishalwork/sispack.git
+cd sispack
+chmod +x sispack
+mv sispack ~/.local/bin/
+```
+
+---
+
+## Usage
+```bash
+sispack          # List all packages by size
+sispack -r       # Reverse order
+sispack -f name  # Search specific package
+sispack -a       # Author info
+sispack -h       # Help
+sispack -v       # Version
+```
+
+---
+
+## Author
+
+Made with ❤️ by **Vishal Kumar** — [@vishalwork](https://github.com/vishalwork)
+Originally forked from [@vlc-ranchi](https://github.com/vlc-ranchi)
